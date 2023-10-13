@@ -1,0 +1,101 @@
+.main-table-for-store {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+}
+button#searchbtn-header {
+    outline: none!important;
+    border: none;
+}
+tr#tabel-customer-admin {
+    background-color: #abe2d74d;
+}
+tr#tabel-customer-admin th {
+    color: #2C3E50;
+    font-weight: 400;
+    border-bottom-style: inherit;
+    border-top-style: inherit;
+}
+tr#tabel-customer-admin th{
+    color: #2C3E50;
+    font-weight: 400;
+}
+.parent-store {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-grow: 2;
+}
+.main-storedashbaord .box2{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+html {
+
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+li.page-item {
+    cursor: pointer;
+}
+a.page-link {
+    cursor: pointer;
+}
+nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow {
+    margin-bottom: 0px !important;
+}
+input#edit_storeInput {
+    width: 140px;
+}
+.modal-backdrop {
+    position:relative ;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    /* width: 100vw;
+    height: 100vh; */
+    background-color: #000;
+}
+button.edit-store {
+    border: none;
+    background-color: #1ABC9C;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #1ABC9C;
+    border-color: #1ABC9C;
+}
+button.submit-store{
+    border: none;
+    background-color:green;
+    margin-right: 5px;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+button.delete-store {
+    border: none;
+    background-color: red;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+table.table.m-5.p-4 {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.modal-backdrop.show {
+
+    opacity: 0;
+}

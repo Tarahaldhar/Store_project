@@ -1,0 +1,1 @@
+export const CreateMasterLogin="CREATE_MASTER_LOGIN"

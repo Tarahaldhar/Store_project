@@ -1,0 +1,82 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.z22 {
+  height: auto;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(253, 101, 133, 1) 0%,
+    rgba(255, 211, 165, 1) 90%
+  ); */
+}
+
+.wrapper-card {
+  border-radius: 10px;
+  /* box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3); */
+  width: 400px;
+  height: auto;
+  /* background-color: #ffffff; */
+  padding: 10px 30px;
+}
+
+.wrapper-card .card_title {
+  text-align: center;
+  padding: 10px;
+}
+
+.wrapper-card .card_title h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.wrapper-card .form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.wrapper-card .form button {
+  background-color: #1ABC9C;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px;
+  width: 100%;
+}
+
+.wrapper-card .card_terms {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.wrapper-card .card_terms input[type="checkbox"] {
+  background-color: #e2e2e2;
+}
+
+.wrapper-card .card_terms span {
+  margin: 5px;
+  font-size: 13px;
+}
+
+.wrapper-card .card a {
+  color: #4796ff;
+  text-decoration: none;
+}
