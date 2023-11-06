@@ -46,7 +46,7 @@ const StoreSignupDashbord = () => {
     }, [])
 
     const handlePageClick = async (data1) => {
-        console.log('clik');
+        console.log('click');
         console.log('pagecount3', data1.selected);
         const data = allData.slice(data1.selected * 5, (data1.selected + 1) * 5)
         setStoreData(data)
@@ -166,8 +166,9 @@ const StoreSignupDashbord = () => {
                                     <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='address' value={saveEdit?.address} onChange={(e) => handleInputField(e)} />) : val?.address}</td>
                                     <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='phone_number' value={saveEdit?.phone_number} onChange={(e) => handleInputField(e)} />) : val?.phone_number}</td>
                                     <td>Completed</td>
-                                    <td>{editRow === rowIndex ? (<button className='submit-store' onClick={(e) => handleSaveBtn(e, rowIndex)}><i class="fa-solid fa-check"></i></button>) :
+                                    <td>{editRow === rowIndex ? (<button className='submit-store'  onClick={(e) => handleSaveBtn(e, rowIndex)}><i class="fa-solid fa-check"></i></button>) :
                                         <button className='edit-store' onClick={() => handleEditBtn(rowIndex, val)}><i className="fa-solid fa-pencil" ></i></button>
+                                      
                                     }
                                         <button className='delete-store' onClick={() => handleDeleteBtn(rowIndex, val)}><i className="fa-solid fa-trash"></i></button>
                                     </td>
