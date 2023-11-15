@@ -18,6 +18,5 @@ export const actionCreators = {
             alert("connection fail")
             console.log('error',error);
         })
-      
     }
 }

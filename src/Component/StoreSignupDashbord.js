@@ -5,10 +5,12 @@ import '../Component/StoreSignupDashboard.css';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import CustomerMddal from './CustomerMddal';
 
 const StoreSignupDashbord = () => {
     const tokenselector = useSelector(state => state.token.token)
-
+    const [showModal, setShowModal] = useState(false);
+    const[modalData, setModalData]=useState();
     let limit = 3;
     const [itemPagination, setItemPagination] = useState([])
     const [pageCount, setPageCount] = useState();
@@ -115,9 +117,32 @@ const StoreSignupDashbord = () => {
             });
     };
 
+    const handleAllCustomer = (e, val) => {
+        const accessToken = getStoreData?.tokens?.access;
 
+        axios({
+            url:'http://127.0.0.1:8000/master-admin/customers-by-store-owner/',
+            data:{
+                "email":val
+            },
+            method:'post',
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((result)=>{
+            setShowModal(true)
+            setModalData(result.data)
+            console.log('result', result.data);
+        })
+       
+    }
+
+    const handleClose=()=>{
+        setShowModal(false)
+    }
     return (
         <>
+            {showModal && <CustomerMddal data={modalData} show={showModal} handleClose={handleClose}/>}
             <div>
                 <Header />
                 <div className='main-table-for-store'>
@@ -125,15 +150,15 @@ const StoreSignupDashbord = () => {
                     <table className="table m-5 p-4">
                         <thead>
                             <div className='parent-store'>
-                            <div className='main-storedashbaord'>
-                                <p style={{ padding: '17px 10px', marginBottom: '0px', color: '#000' }}>
-                                    Active Stores</p>
-                                    </div>
+                                <div className='main-storedashbaord'>
+                                    <p style={{ padding: '17px 10px', marginBottom: '0px', color: '#000' }}>
+                                        Active Stores</p>
+                                </div>
                                 <div className='box2'>
                                     <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                         className="fas fa-download fa-sm text-white-50"></i>Export Report</a>
                                 </div>
-                                
+
 
                             </div>
 
@@ -162,13 +187,13 @@ const StoreSignupDashbord = () => {
                                         <img className="" style={{ height: '2rem', width: '2rem' }} data-toggle="modal" data-target="#exampleModal"
                                             src="img/undraw_profile.svg" />&nbsp;
                                     </td>
-                                    <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='email' value={saveEdit?.email} onChange={(e) => handleInputField(e)} />) : val?.email}</td>
+                                    <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='email' value={saveEdit?.email} onChange={(e) => handleInputField(e)} />) : <p className='email-storeadmin' onClick={(e) => handleAllCustomer(e, val.email)}>{val?.email}</p>}</td>
                                     <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='address' value={saveEdit?.address} onChange={(e) => handleInputField(e)} />) : val?.address}</td>
                                     <td>{editRow === rowIndex ? (<input type='text' id='edit_storeInput' name='phone_number' value={saveEdit?.phone_number} onChange={(e) => handleInputField(e)} />) : val?.phone_number}</td>
                                     <td>Completed</td>
-                                    <td>{editRow === rowIndex ? (<button className='submit-store'  onClick={(e) => handleSaveBtn(e, rowIndex)}><i class="fa-solid fa-check"></i></button>) :
+                                    <td>{editRow === rowIndex ? (<button className='submit-store' onClick={(e) => handleSaveBtn(e, rowIndex)}><i class="fa-solid fa-check"></i></button>) :
                                         <button className='edit-store' onClick={() => handleEditBtn(rowIndex, val)}><i className="fa-solid fa-pencil" ></i></button>
-                                      
+
                                     }
                                         <button className='delete-store' onClick={() => handleDeleteBtn(rowIndex, val)}><i className="fa-solid fa-trash"></i></button>
                                     </td>

@@ -1,0 +1,13 @@
+
+.customer-modal-parent table.table {
+    table-layout: fixed;
+}
+.customer-modal-parent td {
+    word-wrap: break-word;
+}
+@media (min-width: 576px){
+    .customer-modal-parent .modal-dialog {
+        max-width: 800px;
+        margin: 1.75rem auto;
+    }
+}

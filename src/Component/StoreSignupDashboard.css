@@ -23,7 +23,7 @@ tr#tabel-customer-admin th{
 }
 .parent-store {
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
     align-items: center;
     flex-grow: 2;
 }
@@ -100,4 +100,9 @@ table.table.m-5.p-4 {
 .modal-backdrop.show {
 
     opacity: 0;
+}
+.email-storeadmin{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }

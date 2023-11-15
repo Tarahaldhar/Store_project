@@ -4,6 +4,9 @@
   }
   body{
     background-color: #E3E6E6;;
+    background-image: url('/public/img/Customer-Review-Banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .loginwith-parent {
     display: flex;
@@ -92,6 +95,12 @@ img.google {
     transition: .2s;
   }
   
+
+  .login input[type="text"], 
+  .login input[type=password]:focus {
+    border: 1.5px dotted #1ABC9C !important;
+  
+  }
   .login input[type=text]:hover {
     border-color: #031329;
     outline: none;
