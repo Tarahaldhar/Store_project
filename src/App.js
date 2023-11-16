@@ -1,5 +1,5 @@
 import Dashboard from './Component/Dashboard';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import MasterLoginForm from './Component/MasterLoginForm';
 import Admin from './Component/Admin';
 import StoreSignup from './Component/StoreSignup';
@@ -26,7 +26,9 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/StoreSignup' element={<StoreSignup/>}/>
         <Route path='/storedashboard' element={<StoreSignupDashbord/>}/>
+        <Route path='/:id' element={<Navigate to="https://www.google.com/"/>}/>
       </Routes>
+
     </div>
   );
 }
